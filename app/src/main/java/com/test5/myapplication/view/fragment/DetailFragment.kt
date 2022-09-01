@@ -3,7 +3,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -51,8 +50,7 @@ class DetailFragment: Fragment() {
                     binding.UserDe.visibility = View.VISIBLE
                 }
 
-                NetworkResult.Status.Error ->
-                    Toast.makeText(activity, it.message, Toast.LENGTH_SHORT).show()
+                NetworkResult.Status.Error ->{}
 
                 NetworkResult.Status.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
