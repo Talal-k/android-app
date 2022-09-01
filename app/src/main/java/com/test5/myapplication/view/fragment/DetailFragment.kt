@@ -37,7 +37,7 @@ class DetailFragment: Fragment() {
         arguments?.getInt("id")?.let {
         viewModel.getId(it)}
         setupObserverUser()
-          setupObserverDetail()
+        setupObserverDetail()
     }
 
     private fun setupObserverUser() {
@@ -65,12 +65,17 @@ class DetailFragment: Fragment() {
 
         viewModel.Desc.observe(viewLifecycleOwner, Observer {
 
-            if (it.status ==  NetworkResult.Status.Success ) {
-                    if(it.data != null)
-                    bindDetail(it.data)
+            when (it.status) {
+                NetworkResult.Status.Success -> {
+                    if (it.data != null)
+                        bindDetail(it.data)
                 }
+                NetworkResult.Status.Error ->{}
 
+                NetworkResult.Status.Loading -> {
 
+                }
+            }
 
         })
     }

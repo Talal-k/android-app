@@ -18,7 +18,7 @@ class Repository @Inject constructor(private val localDataSource: UserDao, priva
         saveResult = { localDataSource.insert(it.data)}
     )
     fun getDesc(id:Int)= dataProcess(
-        DatabaseQuery = { localDataSource.getDesc(id) },
+        DatabaseQuery = { localDataSource.getDesc(0) },
         NetworkRequest = { remoteDataSource.getSingleUser(id) },
         saveResult = { localDataSource.insertDetail(it.support)}
     )

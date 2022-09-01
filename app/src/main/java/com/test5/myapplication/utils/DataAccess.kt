@@ -1,12 +1,10 @@
 package com.test5.myapplication.utils
 
-import android.util.Log
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
-
 import com.test5.myapplication.data.model.NetworkResult
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.asCoroutineDispatcher
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors

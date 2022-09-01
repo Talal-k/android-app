@@ -16,8 +16,7 @@ class DetailViewModel  @ViewModelInject constructor(
 ) : ViewModel() {
     private val _id = MutableLiveData<Int>()
     private val _Desc = _id.switchMap { id ->
-        repository.getDesc(0)
-
+        repository.getDesc(id)
     }
     val Desc: LiveData<NetworkResult<Desc>> = _Desc
 
